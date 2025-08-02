@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Шестиблочная страница с контейнерами и колонками</title>
+  <style>
+    /* 1. Нативные селекторы */
+    @font-face {
+        font-family: 'Helvetica Neue 5';
+        src: url('fonts/helvetica-neue-5/HelveticaNeueMedium.otf') format('otf'),
+            url('fonts/helvetica-neue-5/HelveticaNeueMedium.otf') format('otf');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+    body {
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    background: #ece5d9;
+    color: #4a4a4a;
+    font-family: 'Helvetica Neue 5', Arial, sans-serif;
+    }
+    ul {
+        margin: 0;
+        font-style: italic;
+    }
+    h3 {
+        font-size: 23px;
+    }
+    a {
+        color: #4a4a4a;
+    }
+    a:visited {
+        color: #3f3f3f;
+    }
+
+    /* 2. Селекторы .block, .container */
+    .block {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    margin-bottom: 32px;
+    }
+    .container {
+    width: 1200px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+    .container img {
+        width: 100%;
+    }
+
+    /* 3. Вложенные селекторы в .block .container */
+    .main .container,
+    .map .container {
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+    padding: 0;
+    }
+
+    /* 4. Селекторы экранов */
+    .header {
+    height: 170px;
+    padding: 32px 0;
+    }
+    .main {}
+    .partners {
+    padding: 32px 0;
+    background: #4a4a4a;
+    }
+    .map {}
+    .faq {}
+    .footer {
+    height: 80px;
+    margin-bottom: 0;
+    padding: 32px 0;
+    background: #4a4a4a;
+    }
+
+    /* 5. Вложенные селекторы в header, main, partners, map, faq, footer */
+    /* header */
+    .header .container {
+        padding-top: 16px;
+    }
+    .header .column-left {
+    font-size: 80px;
+    line-height: 80px;
+    }
+    .header .column-right {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex-direction: column;
+    font-size: 45px;
+    text-align: right;
+    padding-bottom: 0;
+    }
+
+    /* main */
+    .main .column-right {
+        flex-direction: column;
+    }
+    .main h3 {
+        padding-left: 23px;
+    }
+
+    /* partners */
+    .partners .container {
+    flex-direction: column;
+    }
+    .partners h3 {
+        color: #ece5d9;
+    }
+
+    /* map */
+    .map .column-text {
+        padding-left: 16px;
+    }
+    .map h3 {
+        margin-top: 0;
+    }
+
+    /* faq */
+    .faq h3 {
+        width: 100%;
+        text-align: left;
+    }
+    .faq .column-left {
+        flex-direction: column;
+    }
+
+    /* footer */
+    .footer .container {
+        justify-content: space-between;
+        color: #ece5d9;
+    }
+
+    /* 6. Остальные селекторы по алфавиту */
+    .column-left {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+    .column-right {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+    .column-text {
+        width: 100%;
+        font-size: 20px;
+        line-height: 25px;
+    }
+    .footer-info {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+    .footer-logo {
+        display: flex;
+        justify-content: flex-end;
+    }
+    .footer-logo img {
+        width: 64px;
+        height: 64px;
+    }
+    .footer-contacts {
+        display: flex;
+        justify-content: flex-start;
+    }
+    .faq .column-left {
+        flex-direction: column;
+    }
+    .last-photo-link {
+        width: 100%;
+        margin-top: 32px;
+        text-align: left;
+    }
+    .main-buy-btn {
+    font-size: 25px;
+    font-style: italic;
+    padding: 18px 50px;
+    margin-left: 24px;
+    background: #4a4a4a;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+    }
+    .main-buy-btn:hover {
+    background: #7e7e7e;
+    }
+    .main-buy-container {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        margin-top: 16px;
+    }
+    .main-description {
+        padding-left: 23px;
+    }
+    .main-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 16px;
+    padding-right: 32px;
+    }
+    .partners-list {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .partners-list img {
+        width: auto;
+        margin: 0 16px;
+    }
+    .tg-contacts-link {
+        display: flex;
+        flex-direction: column;
+        color: #ece5d9;
+    }
+    .tg-contacts-link:visited {
+        color: #ece5d9;
+    }
+    .tg-logo {
+        display: inline-block;
+        margin-top: 8px;
+        width: 64px;
+        height: 64px;
+        background: #ece5d9;
+        border-radius: 50%;
+    }
+    .tg-logo img {
+        width: 100%;
+        height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="block header">
+    <div class="container">
+        <div class="column-left">
+            <img src="./images/ping-pong-camp.png">
+        </div>
+        <div class="column-right">
+            <div class="header-date">
+                AUGUST </br>
+                22 → 23 → 24
+            </div>
+            <div class="main-buy-container">
+                <button class="main-buy-btn">Купить билет</button>
+            </div>
+        </div>
+    </div>
+  </div>
+  <div class="block main">
+    <div class="container">
+        <div class="column-left">
+            <img src="./images/main-img.jpg" >
+        </div>
+        <div class="column-right">
+            <div class="column-text">
+                <div class="main-description">
+                    PING PONG CAMP - тредневный кемпинг, проходящий на берегу Палазны
+                </div>
+                <h3>В программе:</h3>
+                <ul>
+                    <li>DJ-сеты, а также лайв выступления групп и электронных артистов </li>
+                    <li>Зона с велосипедами от FORMAT </li>
+                    <li>Инфраструктура: зоны отдыха, капитальные туалеты, зарядная станция </li>
+                    <li>Общая кухонная зона с гриль очагом </li>
+                    <li>Различные активности: йога, мастер-классы, турниры по пинг-понгу и бирпонгу, воллейбол, футбол, сапборды и прочее </li>
+                    <li>Кухня от поваров и бары от SABOTAGE и PPCP, крафтовые настойки “Каповка” </li>
+                    <li>Кинопоказ под открытым небом </li>
+                    <li>Бесплатный фильтр кофе </li>
+                    <li>Декорации, фото-зоны и инсталяции </li>
+                    <li>Пивной забег от Mikeller Runing Club </li>
+                    <li>Лесная прогулка от One Day Trip </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+  </div>
+  <div class="block partners">
+    <div class="container">
+        <h3>ПАРТНЕРЫ МЕРОПРИЯТИЯ</h3>
+        <div class="partners-list">
+            <img src="./logos/ppc-logo.png">
+            <img src="./logos/smoky-dog-logo.png">
+            <img src="./logos/partner-logo.png">
+            <img src="./logos/pcc-logo.png">
+            <img src="./logos/sabotage-logo.png">
+        </div>
+    </div>
+  </div>
+  <div class="block map">
+    <div class="container">
+        <div class="column-left">
+            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A7edfeae759b927ff0b8c13f6869b19368ec9fb86f21ddacebcc8003a231b71d4&amp;source=constructor" width="100%" height="614" frameborder="0"></iframe>
+        </div>
+        <div class="column-right">
+            <div class="column-text">
+                <h3>Как добраться?</h3>
+                1. Автобус + пешая прогулка или такси (~100руб с человека билет на автобус):</br></br>
+
+                a. Автобус «Пермь — Полазна» (до остановки УТТ Полазна) (начало маршрута от Цирка);</br>
+                Автобус «Пермь — Добрянка, улица Гайдара» (до остановки УТТ Полазна) (началомаршрута от Автовокзала); </br></br>
+
+                b. Пешком или на такси от остановки до точки назначения (6 километров). </br></br>
+                <a target="_blank" href="https://rasp.yandex.ru/bus/perm--utt">Купить билет на автобус на необходимую дату и время можно перейдя по ссылке</a>
+            </div>
+        </div>
+    </div>
+  </div>
+  <div class="block faq">
+    <div class="container">
+        <div class="column-left">
+            <h3>Что с собой брать?</h3>
+            <div class="column-text">
+                <ul>
+                    <li>палатка</li>
+                    <li>надувной коврик или пенка</li>
+                    <li>спальник</li>
+                    <li>термобелье</li>
+                    <li>микропуховик</li>
+                    <li>комплект купательного и полотенца</li>
+                    <li>средства индивидуальной гигиены</li>
+                    <li>индивидуальные медикаменты, особенно для аллергиков</li>
+                    <li>комплект одежды как с коротким, так и с длинным рукавом</li>
+                    <li>репелленты от комаров и прочего гнуса</li>
+                    <li>нижнее белье кратное количеству дней</li>
+                    <li>системы индивидуального приготовления еды, такие как комплекты газовых систем для готовки, чаши/котлы/сковородки к ним </li>
+                    <li>количество индивидуальной еды пропорциональное количеству дней пребывания</li>
+                    <li>одноразовые карманные и обувные грелки на случай индивидуальной мерзлявости</li>
+                    <li>посуда и приборы - кружки, вилки, ложки, ножи, etc</li>
+                </ul>
+            </div>
+            <div class="column-text">
+                <h3 class="last-photo-link">
+                    <a target="_blank" href="https://disk.yandex.ru/d/nNOmF8kluG8_Cg">Фотографии с прошлого лета</a>
+                </h3>
+            </div>
+        </div>
+        <div class="column-right">
+            <img src="./images/camp-img.png">
+        </div>
+    </div>
+  </div>
+  <div class="block footer">
+    <div class="container">
+        <div class="footer-contacts">
+            <a target="_blank" href="https://t.me/PPCPchat" class="tg-contacts-link">
+                <div class="tg-contact-text">
+                    Связаться с нами
+                </div>
+                <div class="tg-logo">
+                    <img src="./logos/tg-logo.png">
+                </div>
+            </a>
+        </div>
+        <div class="footer-info">
+            pinpongclubperm@mail.ru<br><br>
+            Новиков Кирилл Витальевич <br>
+            591152235553
+        </div>
+        <div class="footer-logo">
+            <img src="./logos/ppc-logo.png">
+        </div>
+    </div>
+  </div>
+</body>
+</html>
