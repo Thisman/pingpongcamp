@@ -14,12 +14,12 @@
         font-display: swap;
     }
     body {
-    margin: 0;
-    padding: 0;
-    font-size: 13px;
-    background: #ece5d9;
-    color: #4a4a4a;
-    font-family: 'Helvetica Neue 5', Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        font-size: 13px;
+        background: #ece5d9;
+        color: #4a4a4a;
+        font-family: 'Helvetica Neue 5', Arial, sans-serif;
     }
     ul {
         margin: 0;
@@ -37,17 +37,17 @@
 
     /* 2. Селекторы .block, .container */
     .block {
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    margin-bottom: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        margin-bottom: 32px;
     }
     .container {
-    width: 1200px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+        width: 1200px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .container img {
         width: 100%;
@@ -56,29 +56,29 @@
     /* 3. Вложенные селекторы в .block .container */
     .main .container,
     .map .container {
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: row;
-    padding: 0;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: row;
+        padding: 0;
     }
 
     /* 4. Селекторы экранов */
     .header {
-    height: 170px;
-    padding: 32px 0;
+        height: 170px;
+        padding: 32px 0;
     }
     .main {}
     .partners {
-    padding: 32px 0;
-    background: #4a4a4a;
+        padding: 32px 0;
+        background: #4a4a4a;
     }
     .map {}
     .faq {}
     .footer {
-    height: 80px;
-    margin-bottom: 0;
-    padding: 32px 0;
-    background: #4a4a4a;
+        height: 80px;
+        margin-bottom: 0;
+        padding: 32px 0;
+        background: #4a4a4a;
     }
 
     /* 5. Вложенные селекторы в header, main, partners, map, faq, footer */
@@ -87,17 +87,18 @@
         padding-top: 16px;
     }
     .header .column-left {
-    font-size: 80px;
-    line-height: 80px;
+        font-size: 80px;
+        line-height: 80px;
     }
     .header .column-right {
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    flex-direction: column;
-    font-size: 45px;
-    text-align: right;
-    padding-bottom: 0;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        flex-direction: column;
+        font-size: 45px;
+        text-align: right;
+        padding-bottom: 0;
+        margin-top: -32px;
     }
 
     /* main */
@@ -110,7 +111,7 @@
 
     /* partners */
     .partners .container {
-    flex-direction: column;
+        flex-direction: column;
     }
     .partners h3 {
         color: #ece5d9;
@@ -141,18 +142,18 @@
 
     /* 6. Остальные селекторы по алфавиту */
     .column-left {
-    width: 60%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+        width: 60%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .column-right {
-    width: 40%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+        width: 40%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .column-text {
         width: 100%;
@@ -185,20 +186,20 @@
         text-align: left;
     }
     .main-buy-btn {
-    font-size: 25px;
-    font-style: italic;
-    padding: 18px 50px;
-    margin-left: 24px;
-    background: #4a4a4a;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background 0.2s;
+        font-size: 25px;
+        font-style: italic;
+        padding: 18px 50px;
+        margin-left: 24px;
+        background: #4a4a4a;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background 0.2s;
     }
     .main-buy-btn:hover {
-    background: #7e7e7e;
+        background: #7e7e7e;
     }
     .main-buy-container {
         display: flex;
@@ -210,13 +211,13 @@
         padding-left: 23px;
     }
     .main-left {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding-left: 16px;
-    padding-right: 32px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding-left: 16px;
+        padding-right: 32px;
     }
     .partners-list {
         display: flex;
@@ -246,6 +247,9 @@
     .tg-logo img {
         width: 100%;
         height: 100%;
+    }
+    .header-date {
+        font-size: 35px;
     }
   </style>
 </head>
