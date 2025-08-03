@@ -31,7 +31,6 @@
   <meta name="twitter:image" content="https://ping-pong-camp.ru/images/main-img.jpg" />
 
   <style>
-    /* ваш CSS без изменений */
     @font-face {
         font-family: 'Helvetica Neue 5';
         src: url('fonts/helvetica-neue-5/HelveticaNeueMedium.otf') format('otf'),
@@ -84,7 +83,6 @@
         font-size: 25px;
         font-style: italic;
         padding: 18px 50px;
-        margin-left: 24px;
         background: #4a4a4a;
         color: #fff;
         border: none;
@@ -131,6 +129,11 @@
         text-align: center;
         font-size: 14px;
     }
+    .footer-info-mobile {
+        margin-top: 8px;
+        text-align: center;
+        font-size: 14px;
+    }
     .tg-contacts-link {
         display: flex;
         flex-direction: column;
@@ -161,6 +164,22 @@
     .molotov {
         width: 20%;
     }
+
+    .row {
+        margin-left: 0;
+    }
+
+    @media (max-width: 798px) {
+        .main-buy-container {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .main-buy-btn {
+            width: 90%;
+        }
+    }
   </style>
 </head>
 <body>
@@ -170,7 +189,7 @@
         <div class="col-12 col-md-7">
           <img class="block-image" src="./images/ping-pong-camp.png" alt="Логотип Ping Pong Camp">
         </div>
-        <div class="col-1"></div>
+        <div class="col-1 d-none d-md-block"></div>
         <div class="col-12 col-md-4 d-flex flex-column align-items-end justify-content-start">
             <div class="header-date">
                 AUGUST
@@ -189,7 +208,7 @@
   <main class="block main">
     <div class="my-container container-fluid">
       <div class="row w-100">
-        <div class="col-12 col-md-7">
+        <div class="col-12 col-md-7 d-none d-md-block">
           <img class="block-image" src="./images/main-img.jpg" alt="Главное фото кемпинга">
         </div>
         <div class="col-12 col-md-5">
@@ -247,7 +266,7 @@
   <section class="block map">
     <div class="my-container container-fluid">
       <div class="row w-100">
-        <div class="col-12 col-md-7">
+        <div class="col-12 col-md-7 d-none d-md-block">
           <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A7edfeae759b927ff0b8c13f6869b19368ec9fb86f21ddacebcc8003a231b71d4&amp;source=constructor"
             width="100%" height="614" frameborder="0"
             title="Карта расположения кемпинга"></iframe>
@@ -300,7 +319,7 @@
             </h3>
           </div>
         </div>
-        <div class="col-12 col-md-5">
+        <div class="col-12 col-md-5 d-none d-md-block">
           <img class="block-image" src="./images/camp-img.png" alt="Кемпинг на берегу Палазны">
         </div>
       </div>
@@ -310,7 +329,7 @@
   <footer class="block footer">
     <div class="my-container container-fluid">
       <div class="row w-100 align-items-center">
-        <div class="col-12 col-md-4 footer-contacts">
+        <div class="col-6 col-md-4 footer-contacts">
           <a target="_blank" rel="noopener noreferrer" href="https://t.me/PPCPchat" class="tg-contacts-link">
             <div class="tg-contact-text">
               Связаться с нами
@@ -320,13 +339,18 @@
             </div>
           </a>
         </div>
-        <div class="col-12 col-md-4 footer-info">
+        <div class="col-md-4 footer-info d-none d-md-block">
           pinpongclubperm@mail.ru<br><br>
           Новиков Кирилл Витальевич <br>
           591152235553
         </div>
-        <div class="col-12 col-md-4 footer-logo">
+        <div class="col-6 col-md-4 footer-logo">
           <img class="footer-logo-img" src="./logos/ppc-logo.png" alt="Логотип PPC">
+        </div>
+        <div class="col-md-4 footer-info-mobile d-md-none">
+          pinpongclubperm@mail.ru<br>
+          Новиков Кирилл Витальевич <br>
+          591152235553
         </div>
       </div>
     </div>
