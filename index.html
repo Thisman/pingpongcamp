@@ -94,6 +94,13 @@
     .main-buy-btn:hover {
         background: #7e7e7e;
     }
+    .prices .main-buy-btn {
+      background: #ece5d9;
+      color: #4a4a4a;
+    }
+    .prices .main-buy-btn:hover {
+      background: #d7d1c5;
+    }
     .header-date {
         font-size: 30px;
         line-height: 35px;
@@ -101,10 +108,20 @@
     .header {
         padding-top: 32px;
     }
+    .prices,
     .partners {
         color: #ece5d9;
         background: #4a4a4a;
         padding-bottom: 32px;
+    }
+    .price-value {
+      font-size: 25px;
+    }
+    .prices h3 {
+      font-size: 35px;
+    }
+    .price-descrition {
+      font-size: 15px;
     }
     .partners h3 {
         text-align: center;
@@ -282,6 +299,25 @@
               Купить билет на автобус на необходимую дату и время можно перейдя по ссылке
             </a>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block prices">
+    <div class="my-container container-fluid">
+      <div class="row w-100">
+        <div class="col-12 col-md-7 d-md-block">
+            <h3>Super Early билет</h3>
+            <div class="price-value">8000 рублей</div>
+            <div class="price-descrition">
+              Единый билет на все дни фестиваля
+            </div>
+        </div>
+        <div class="col-12 col-md-5 d-flex align-items-center justify-content-center">
+            <div class="main-buy-container">
+                <button class="main-buy-btn">Купить билет</button>
+            </div>
         </div>
       </div>
     </div>
