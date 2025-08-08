@@ -80,6 +80,7 @@
     .main-buy-container {
         margin-top: 10px;
     }
+    .yoomoney-payment-form .ym-payment-btn-block .ym-btn-pay,
     .main-buy-btn {
         font-size: 25px;
         font-style: italic;
@@ -93,7 +94,7 @@
         transition: background 0.2s;
     }
     .main-buy-btn:hover {
-        background: #7e7e7e;
+      background: #7e7e7e;
     }
     .header-date {
         font-size: 30px;
@@ -177,21 +178,46 @@
       width: 250px;
     }
 
-    .yoomoney-payment-form .ym-payment-btn-block .ym-btn-pay{
+    .yoomoney-payment-form .ym-payment-btn-block .ym-btn-pay {
       background: #ece5d9;
       color: #4a4a4a;
+      width: 100%;
+      max-width: none;
+      margin: 0;
+    }
+
+    .yoomoney-payment-form .ym-payment-btn-block .ym-btn-pay:hover {
+      background: #f7f1e9;
+    }
+
+    .yoomoney-payment-form .ym-payment-btn-block .ym-btn-pay .ym-text-crop {
+      text-align: center;
+    }
+    
+    .tickets-container {
+      display: flex;
+    }
+    .tickets-container img:nth-child(2) {
+      margin-left: -125px;
     }
 
     @media (max-width: 798px) {
-        .main-buy-container {
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .main-buy-btn {
-            width: 90%;
-        }
+      .buy-header-link {
+        width: 95%;
+        text-align: center;
+      }
+      .main-buy-container {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+      }
+      .main-buy-btn {
+          width: 100%;
+      }
+      .yoomoney-payment-form .ym-payment-btn-block .ym-btn-pay {
+        height: 64px;
+      }
     }
   </style>
 </head>
@@ -211,7 +237,7 @@
                 22 → 23 → 24
             </div>
             <div class="main-buy-container">
-                <a href="#buy">
+                <a href="#buy" class="buy-header-link">
                   <button class="main-buy-btn">Купить билет</button>
                 </a>
             </div>
@@ -253,7 +279,8 @@
             <div class="price-descrition">
               Единый билет на все дни фестиваля
             </div>
-            <div>
+            <div class="tickets-container">
+              <img class="ticket-image d-none d-md-block" src="images/ticket-img.png" alt="Изображение биллетов">
               <img class="ticket-image d-none d-md-block" src="images/ticket-img.png" alt="Изображение биллетов">
             </div>
         </div>
@@ -272,7 +299,7 @@
                   <div class="ym-input-icon-rub ym-display-none">
                       <input name="sum" placeholder="0.00" class="ym-input ym-sum-input ym-required-input" type="number" step="any" value="2500">
                   </div>
-                  <button data-text="Заплатить" class="ym-btn-pay ym-result-price"><span class="ym-text-crop">Заплатить</span> <span class="ym-price-output"> 2&nbsp;500,00&nbsp;₽</span></button><img src="https://yookassa.ru/integration/simplepay/img/iokassa-gray.svg?v=1.25.0" class="ym-logo" width="114" height="27" alt="ЮKassa">
+                  <button data-text="Заплатить" class="ym-btn-pay ym-result-price"><span class="ym-text-crop">Купить за 2&nbsp;500,00&nbsp;₽</span></button>
               </div>
           <input name="shopId" type="hidden" value="1128590"></form>
           <script src="https://yookassa.ru/integration/simplepay/js/yookassa_construct_form.js?v=1.25.0"></script>
